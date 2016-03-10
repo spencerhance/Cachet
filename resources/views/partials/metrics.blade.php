@@ -44,6 +44,7 @@
             labels: [],
             datasets: [{
                 fillColor: "{{ $theme_metrics }}",
+                strokeColor: "{{ $theme_metrics }}",
                 pointColor: "{{ color_darken($theme_metrics, -0.1) }}",
                 pointStrokeColor: "{{ color_darken($theme_metrics, -0.1) }}",
                 pointHighlightFill: "{{ color_darken($theme_metrics, -0.2) }}",
@@ -95,9 +96,11 @@
             chart.chart = new Chart(chart.context).Line(chartConfig, {
                 tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
                 scaleShowVerticalLines: true,
-                scaleShowLabels: false,
+                scaleShowLabels: true,
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                pointDot: false,
+                datasetFill: false
             });
         });
     }
