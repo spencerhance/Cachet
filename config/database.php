@@ -57,8 +57,8 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => env('DB_HOST', storage_path().'/database.sqlite'),
-            'prefix'   => '',
+            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'prefix'   => env('DB_PREFIX', null),
         ],
 
         'mysql' => [
@@ -67,11 +67,12 @@ return [
             'database'  => env('DB_DATABASE', null),
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
-            'port'      => env('DB_PORT', null),
+            'port'      => env('DB_PORT', '3306'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix'    => env('DB_PREFIX', null),
             'strict'    => false,
+            'engine'    => null,
         ],
 
         'pgsql' => [
@@ -80,10 +81,10 @@ return [
             'database'  => env('DB_DATABASE', null),
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
-            'port'      => env('DB_PORT', null),
+            'port'      => env('DB_PORT', '5432'),
             'charset'   => 'utf8',
-            'prefix'    => '',
-            'schema'    => 'public',
+            'prefix'    => env('DB_PREFIX', null),
+            'schema'    => env('DB_SCHEMA', 'public'),
         ],
 
         'sqlsrv' => [
@@ -93,7 +94,7 @@ return [
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
             'port'      => env('DB_PORT', null),
-            'prefix'    => '',
+            'prefix'    => env('DB_PREFIX', null),
         ],
 
     ],

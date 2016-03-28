@@ -12,14 +12,15 @@
 return [
     // Components
     'components' => [
-        'group' => [
-            'other' => 'Other Components',
-        ],
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operational',
             2 => 'Performance Issues',
             3 => 'Partial Outage',
             4 => 'Major Outage',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -70,7 +71,7 @@ return [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
             'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
-        'email'     => [
+        'email' => [
             'subscribe'          => 'Subscribe to email updates.',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
@@ -138,6 +139,7 @@ return [
     ],
 
     // Other
+    'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',

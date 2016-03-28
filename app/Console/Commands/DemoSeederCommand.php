@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Console\Commands;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Setting;
@@ -62,6 +63,7 @@ class DemoSeederCommand extends Command
         $this->seedComponentGroups();
         $this->seedComponents();
         $this->seedIncidents();
+        $this->seedIncidentTemplates();
         $this->seedMetricPoints();
         $this->seedMetrics();
         $this->seedSettings();
@@ -82,11 +84,11 @@ class DemoSeederCommand extends Command
             [
                 'name'      => 'Websites',
                 'order'     => 1,
-                'collapsed' => false,
+                'collapsed' => 0,
             ], [
                 'name'      => 'Alt Three',
                 'order'     => 2,
-                'collapsed' => true,
+                'collapsed' => 1,
             ],
         ];
 
@@ -157,7 +159,25 @@ class DemoSeederCommand extends Command
      */
     protected function seedIncidents()
     {
+        $incidentMessage = <<<'EINCIDENT'
+# Of course it does!
+
+What kind of web application doesn't these days?
+
+## Headers are fun aren't they
+
+It's _exactly_ why we need Markdown. For **emphasis** and such.
+EINCIDENT;
+
         $defaultIncidents = [
+            [
+                'name'         => 'Cachet supports Markdown!',
+                'message'      => $incidentMessage,
+                'status'       => 4,
+                'component_id' => 0,
+                'scheduled_at' => null,
+                'visible'      => 1,
+            ],
             [
                 'name'         => 'Awesome',
                 'message'      => ':+1: We totally nailed the fix.',
@@ -205,6 +225,16 @@ class DemoSeederCommand extends Command
         foreach ($defaultIncidents as $incident) {
             Incident::create($incident);
         }
+    }
+
+    /**
+     * Seed the incident templates table.
+     *
+     * @return void
+     */
+    protected function seedIncidentTemplates()
+    {
+        IncidentTemplate::truncate();
     }
 
     /**

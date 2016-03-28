@@ -6,14 +6,14 @@
     @endif
 
     @if($component->description)
-    <i class="ion-ios-help-outline help-icon" data-toggle="tooltip" data-title="{{ $component->description }}"></i>
+    <i class="ion ion-ios-help-outline help-icon" data-toggle="tooltip" data-title="{{ $component->description }}"></i>
     @endif
 
     @if(subscribers_enabled())
-    <a href="#" data-toggle="modal" data-target="#subscribe-modal" data-component-id="{{ $component->id }}"><i class="ion-ios-email-outline" data-toggle="tooltip" data-title="{{ trans('cachet.subscriber.email.component.tooltip-title', ['component_name' => $component->name]) }}"></i></a>
+    <a href="#" data-toggle="modal" data-target="#subscribe-modal" data-component-id="{{ $component->id }}"><i class="ion ion-ios-email-outline" data-toggle="tooltip" data-title="{{ trans('cachet.subscriber.email.component.tooltip-title', ['component_name' => $component->name]) }}"></i></a>
     @endif
 
     <div class="pull-right">
-        <small class="text-component-{{ $component->status }} {{ $component->status_color }}">{{ $component->human_status }}</small>
+        <small class="text-component-{{ $component->status }} {{ $component->status_color }}" data-toggle="tooltip" title="{{ trans('cachet.components.last_updated', ['timestamp' => $component->updated_at_formatted]) }}">{{ $component->human_status }}</small>
     </div>
 </li>

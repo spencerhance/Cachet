@@ -7,14 +7,14 @@
         <strong>{{ $componentGroup->name }}</strong>
 
         <div class="pull-right">
-            <i class="ion-ios-circle-filled text-component-{{ $componentGroup->lowest_status }} {{ $componentGroup->lowest_status_color }}" data-toggle="tooltip" title="{{ $componentGroup->lowest_human_status }}"></i>
+            <i class="ion ion-ios-circle-filled text-component-{{ $componentGroup->lowest_status }} {{ $componentGroup->lowest_status_color }}" data-toggle="tooltip" title="{{ $componentGroup->lowest_human_status }}"></i>
         </div>
     </li>
 
-    <div class="group-items {{ $componentGroup->collapsed ? "hide" : null }}">
-    @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
-    @include('partials.component', compact($component))
-    @endforeach
+    <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
+        @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
+        @include('partials.component', compact($component))
+        @endforeach
     </div>
     @endif
 </ul>

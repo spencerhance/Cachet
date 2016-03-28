@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'crwdns721:0crwdne721:0',
+        'status'       => [
             1 => 'crwdns265:0crwdne265:0',
             2 => 'crwdns293:0crwdne293:0',
             3 => 'crwdns294:0crwdne294:0',
             4 => 'crwdns295:0crwdne295:0',
+        ],
+        'group' => [
+            'other' => 'crwdns659:0crwdne659:0',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'crwdns551:0crwdne551:0',
         'button'    => 'crwdns490:0crwdne490:0',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'crwdns660:0crwdne660:0',
+            'my_subscriptions' => 'crwdns661:0crwdne661:0',
+        ],
+        'email' => [
             'subscribe'          => 'crwdns491:0crwdne491:0',
             'subscribed'         => 'crwdns492:0crwdne492:0',
             'verified'           => 'crwdns493:0crwdne493:0',
+            'manage'             => 'crwdns662:0crwdne662:0',
             'unsubscribe'        => 'crwdns552:0crwdne552:0',
             'unsubscribed'       => 'crwdns495:0crwdne495:0',
             'failure'            => 'crwdns496:0crwdne496:0',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'crwdns663:0crwdne663:0',
     'powered_by'      => 'crwdns562:0crwdne562:0',
     'about_this_site' => 'crwdns563:0crwdne563:0',
     'rss-feed'        => 'crwdns506:0crwdne506:0',

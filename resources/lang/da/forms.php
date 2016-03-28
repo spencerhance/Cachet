@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Brugernavn eller email',
         'email'         => 'Email',
         'password'      => 'Adgangskode',
         '2fauth'        => 'Godkendelses kode',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => 'Ugyldigt brugernavn eller adgangskode',
         'invalid-token' => 'Ugyldig kode',
         'cookies'       => 'Du skal tillade cookies for at kunne logge ind.',
     ],
@@ -46,13 +46,13 @@ return [
         'scheduled_at'       => 'Hvornår skal vedligeholdelses vinduet skeduleres til?',
         'incident_time'      => 'Hvornår skete hændelsen?',
         'notify_subscribers' => 'Underret abonnenter',
-        'visibility'         => 'Synlig',
+        'visibility'         => 'Hændelses synlighed',
         'public'             => 'Synlig for offentligheden',
         'logged_in_only'     => 'Kun synlig for brugere der er logget ind',
         'templates'          => [
             'name'     => 'Navn',
             'template' => 'Template',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="http://twig.sensiolabs.org/" target="_blank"> Twigs</a> skabelon sprog.',
         ],
     ],
 
@@ -63,13 +63,16 @@ return [
         'group'       => 'Group',
         'description' => 'Description',
         'link'        => 'Link',
-        'tags'        => 'Tags',
+        'tags'        => 'Mærkat',
         'tags-help'   => 'Komma adskilt.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Navn',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Navn',
+            'collapsing'         => 'Vælg synlighed af gruppen',
+            'visible'            => 'Altid åben',
+            'collapsed'          => 'Minimer gruppen som standard',
+            'collapsed_incident' => 'Minimer gruppen, men hold den åben hvis der er fejl',
         ],
     ],
 
@@ -85,7 +88,7 @@ return [
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => 'Antal decimaler',
-        'default_view'     => 'Default view',
+        'default_view'     => 'Standardvisning',
 
         'points' => [
             'value' => 'Value',
@@ -96,12 +99,12 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Sidens navn',
+            'site-name'              => 'Sidenavn',
             'site-url'               => 'Sidens URL',
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
-            'banner'                 => 'Banner Image',
+            'banner'                 => 'Banner billede',
             'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
             'subscribers'            => 'Tillad at man kan tilmelde sig emailnotifikationer?',
         ],
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Komma adskilt. Domænet ovenfor har automatisk adgang.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Tilpasset stylesheet',
+            'custom-css' => 'Tilpasset CSS',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => 'Baggrundsfarve',
             'background-fills'        => 'Baggrundsfyld (Komponenter, hændelser og footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text Color',
+            'text-color'              => 'Tekstfarve',
             'dashboard-login'         => 'Vis oversigtsside ikon i bunden af siden?',
             'reds'                    => 'Rød (Brugt til fejl)',
             'blues'                   => 'Blå (Brugt til information)',
