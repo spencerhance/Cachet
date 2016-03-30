@@ -70,6 +70,14 @@ final class AddMetricCommand
     public $default_view;
 
     /**
+     * The metric SLA.
+     *
+     * @var int
+     */
+    public $sla_value;
+
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -84,6 +92,7 @@ final class AddMetricCommand
         'display_chart' => 'int',
         'places'        => 'int|between:0,4',
         'default_view'  => 'int|between:0,3',
+        'sla_value'     => 'int',
     ];
 
     /**
@@ -97,10 +106,11 @@ final class AddMetricCommand
      * @param int    $display_chart
      * @param int    $places
      * @param int    $default_view
+     * @param int    $sla_value
      *
      * @return void
      */
-    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view)
+    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $sla_value)
     {
         $this->name = $name;
         $this->suffix = $suffix;
@@ -110,5 +120,6 @@ final class AddMetricCommand
         $this->display_chart = $display_chart;
         $this->places = $places;
         $this->default_view = $default_view;
+        $this->sla_value = $sla_value;
     }
 }

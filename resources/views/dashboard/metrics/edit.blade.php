@@ -52,6 +52,10 @@
                             <input type="number" class="form-control" name="default_value" id="metric-default_value" value="{{ $metric->default_value }}">
                         </div>
                         <div class="form-group">
+                            <label for="metric-sla_value">{{ trans('forms.metrics.sla_value') }}</label>
+                            <input type="number" class="form-control" name="sla_value" id="metric-sla_value" value="{{ $metric->sla_value }}">
+                        </div>                        
+                        <div class="form-group">
                             <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
                             <input type="number" min="0" max="4" class="form-control" name="places" id="metric-places" required value="{{ $metric->places }}">
                         </div>

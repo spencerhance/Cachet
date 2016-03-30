@@ -35,6 +35,7 @@ class AddMetricCommandHandler
             'display_chart' => $command->display_chart,
             'places'        => $command->places,
             'default_view'  => $command->default_view,
+            'sla_value'     => $command->sla_value,
         ]);
 
         event(new MetricWasAddedEvent($metric));

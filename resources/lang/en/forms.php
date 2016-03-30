@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Average',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'sla_value'        => 'SLA value',
 
         'points' => [
             'value' => 'Value',

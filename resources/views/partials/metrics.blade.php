@@ -38,6 +38,7 @@
     Chart.defaults.global.elements.point.hitRadius = 10;
     Chart.defaults.global.responsiveAnimationDuration = 1000;
     Chart.defaults.global.legend.display = false;
+    Chart.defaults.global.elements.line.fill = false;
 
     var charts = {};
 
@@ -78,7 +79,7 @@
                 chart.chart.destroy();
             }
 
-            chart.chart = new Chart(chart.context, {
+            chartConfig = {
                 type: 'line',
                 data: {
                     labels: _.keys(data),
@@ -108,9 +109,36 @@
                                 return " " + result.data.metric.suffix;
                             }
                         }
+                    },
+                    elements: {
+                        point: {
+                            radius: 1,
+                            hitRadius: 50
+                        }
                     }
                 }
-            });
+            }
+
+           if (result.data.metric.sla_value){
+                slaData = [];
+
+                for (var i = 0; i < _.values(data).length; i++){
+                    slaData.push(result.data.metric.sla_value)
+                }
+
+                chartConfig.data.datasets.push({
+                    label: "SLA",
+                    data: slaData,
+                    borderColor: "{{ $theme_reds }}",
+                    backgroundColor: "{{ $theme_reds }}",
+                    pointBackgroundColor: "{{ $theme_reds }}",
+                    pointBorderColor: "{{ $theme_reds }}",
+                    pointHoverBackgroundColor: "{{ $theme_reds }}",
+                    pointHoverBorderColor: "{{ $theme_reds }}"
+                });                                
+            }
+
+            chart.chart = new Chart(chart.context, chartConfig);
         });
     }
 }());

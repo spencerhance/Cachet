@@ -52,6 +52,10 @@
                             <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Binput::old('metric.default_value') }}">
                         </div>
                         <div class="form-group">
+                            <label for="metric-sla_value">{{ trans('forms.metrics.sla_value') }}</label>
+                            <input type="number" class="form-control" name="metric[sla_value]" id="metric-sla_value" value="{{ Binput::old('metric.sla_value') }}">
+                        </div>                        
+                        <div class="form-group">
                             <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
                             <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Binput::old('metric.places') }}">
                         </div>

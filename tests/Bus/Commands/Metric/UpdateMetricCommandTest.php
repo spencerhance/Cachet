@@ -39,6 +39,7 @@ class UpdateMetricCommandTest extends AbstractTestCase
             'display_chart' => 1,
             'places'        => 0,
             'default_view'  => 0,
+            'sla_value'     => 0,
         ];
 
         $object = new UpdateMetricCommand(
@@ -50,7 +51,8 @@ class UpdateMetricCommandTest extends AbstractTestCase
             $params['calc_type'],
             $params['display_chart'],
             $params['places'],
-            $params['default_view']
+            $params['default_view'],
+            $params['sla_value']
         );
 
         return compact('params', 'object');
